@@ -6,7 +6,7 @@
 /*   By: aerrazik <aerrazik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 11:59:08 by aerrazik          #+#    #+#             */
-/*   Updated: 2022/07/31 01:53:42 by aerrazik         ###   ########.fr       */
+/*   Updated: 2022/08/01 03:28:05 by aerrazik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,39 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	res[i] = '\0';
 	return (res);
 }
+
+int	ft_strcmp(const char *hst, const char *ndl)
+{
+	while (*hst && *ndl)
+	{
+		if (*hst != *ndl)
+			return (0);
+		hst++;
+		ndl++;
+	}
+	return (*ndl == '\0');
+}
+
+char	*ft_strnstr(const char *hst, const char *ndl, size_t len)
+{
+	size_t	i;
+
+	if (*ndl == '\0')
+		return ((char *)hst);
+	i = 0;
+	if (len != 0)
+	{
+		while (*hst && i < len - ft_strlen(ndl) + 1)
+		{
+			if (*hst == *ndl && ft_strcmp(hst, ndl))
+				return ((char *)hst);
+			hst++;
+			i++;
+		}
+	}
+	return (0);
+}
+
 /*
 int main()
 {
