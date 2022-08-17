@@ -6,7 +6,7 @@
 /*   By: aerrazik <aerrazik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 12:49:14 by aerrazik          #+#    #+#             */
-/*   Updated: 2022/07/31 01:53:21 by aerrazik         ###   ########.fr       */
+/*   Updated: 2022/08/16 18:56:10 by aerrazik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,18 +78,3 @@ char	**ft_split(char const *s, char c)
 	spl[j] = 0;
 	return (spl);
 }
-/*
-int main()
-{
-	char s[] = "lorem ipsum dolor sit amet, consectetur ";
-	int i;
-	char	**str = ft_split(s, 'i');
-	i = 0;
-	while (str[i])
-	{
-		printf("->%s\n", str[i]);
-		i++;
-	}
-	printf("-> %d\n", count(s, ' '));
-}
-*/

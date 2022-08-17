@@ -1,0 +1,40 @@
+/*
+
+
+
+
+
+
+
+int main
+while(i < argc - 3 ) 3 ==> ./a.out infile outfile{
+    if (i < argc - 4) 4 ==> the 3 + no pipe in the last loop{
+        pipe(fd1) => loop 1, pipe(fd2) => loop 2, pipe(fd1) => loop 3.
+        a bool for loops
+    }
+    fork()
+    if (i > 0){
+        close(fd1[0], fd1[1]) => loop 2, close(fd2[0], fd2[1]) => loop3, close(fd1[1], fd[0])
+        a pointer to the fd and alternate it on every loop 
+    }
+}
+child 1 {
+    dup2(fd1[1])
+}
+
+child 1 salam
+child 2 labas
+child 3 salam labas
+*/
+
+/************************************************************************* 
+
+1 - detect here_doc : done
+2 - creat a pipe and a child : done
+3 - read from the STDIN by gnl and write it in the pipe : done
+4 - close the pipe side from the child : done 
+5 - link the pipe to the cmd child then close it : 
+6 - close it from the parent when it's done : 
+
+/*************************************************************************
+

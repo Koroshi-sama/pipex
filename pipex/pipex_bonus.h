@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   pipex_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aerrazik <aerrazik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 23:37:13 by aerrazik          #+#    #+#             */
-/*   Updated: 2022/08/16 18:35:20 by aerrazik         ###   ########.fr       */
+/*   Updated: 2022/08/17 13:47:13 by aerrazik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#ifndef PIPEX_BONUS_H
+# define PIPEX_BONUS_H
 
 # include<unistd.h>
 # include<sys/wait.h>
@@ -38,6 +38,8 @@ typedef struct t_pipex
 	int		fd_b;
 	int		cmd_index;
 	int		cmd;
+	int		last_pid;
+	int		pid;
 }	t_pip;
 
 char	*ft_strjoin(char const *s1, char const *s2);
@@ -51,5 +53,12 @@ char	*find_path2(char **envp, char *cmd);
 void	check_space(char *argv);
 void	child_b(t_pip *pi, char **argv, char **envp);
 int		cmp(char *str1, char *str2);
+void	here_doc(char **argv, t_pip *pi);
+void	child_here_doc(int *fd, char **argv, t_pip *pi);
+void	pipe_it(t_pip *pi);
+int		wt(t_pip pi, int argc, char **argv);
+void	switch_fd(t_pip *pi);
+void	close_it(t_pip *pi);
+int		ret_er(void);
 
 #endif
